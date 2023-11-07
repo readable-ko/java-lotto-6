@@ -12,6 +12,10 @@ public class BonusInputView extends InputView {
         Exceptions.checkIsNumber(inputMessage);
         bonusNumber = Integer.parseInt(inputMessage);
 
+        List<Integer> tmp = lottoNumbers;
+        tmp.add(bonusNumber);
+        
+        Exceptions.checkLottoDuplicate(tmp);
         Exceptions.checkLottoRange(List.of(bonusNumber));
     }
 
